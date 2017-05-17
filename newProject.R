@@ -27,8 +27,7 @@ ui <- bootstrapPage(
     selectInput("colors", "Color Scheme",
                 rownames(subset(brewer.pal.info, category %in% c("seq", "div")))
                 ),
-    checkboxInput("legend", "Show legend", TRUE)
-    ),
+    checkboxInput("legend", "Show legend", TRUE),
   conditionalPanel("input.show_extent == true",
                   fluidRow(
                      column(6,
@@ -38,7 +37,7 @@ ui <- bootstrapPage(
                      column(3, h4("Mask:")),
                      column(3, uiOutput("Mask_in_use"))
                    )
-  )
+  ))
 )
 
 server <- function(input, output, session) {
